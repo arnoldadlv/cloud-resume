@@ -9,7 +9,7 @@ import { GithubIcon } from "@/components/icons";
 
 export default function Home() {
   return (
-    <section className="w-full flex flex-col items-center justify-center gap-4 py-8 border border-red-600 md:py-10">
+    <section className="w-full flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <div className="w-full inline-block text-center justify-center">
         <span className={title()}>Hello, I'm Arnold,&nbsp;</span>
         <br />
@@ -30,10 +30,10 @@ export default function Home() {
         </Link>
       </div>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 items-start">
-        <div className="items-center text-center mt-5">
+        <div className="flex flex-col items-center text-center mt-5">
           <h2 className={`${title({ color: "violet" })}`}>Skills</h2>
           <span className={subtitle()}>
-            <ul className="list-disc pl-5 text-left md:mx-40">
+            <ul className="md: list-disc list-inside text-left inline-block mx-auto">
               <li>GCCH Administration</li>
               <li>Azure</li>
               <li>Intune</li>
@@ -44,15 +44,16 @@ export default function Home() {
           </span>
         </div>
         <div>
-          <div className="items-center text-center mt-5">
+          <div className="flex flex-col items-center text-center mt-5">
             <h2 className={`${title({ color: "violet" })}`}>Certs</h2>
             <span className={subtitle()}>
-              <ul className="list-disc pl-5 mx-auto md:mx-40 text-left md:text-left">
+              <ul className="md: list-disc list-inside text-left inline-block mx-auto">
                 <li>CompTIA Network+</li>
                 <li>CompTIA Security+</li>
                 <li>AZ-104</li>
                 <li>AZ-305</li>
                 <li>SC-300</li>
+                <li>AZ-500</li>
               </ul>
             </span>
           </div>
