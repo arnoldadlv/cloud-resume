@@ -18,7 +18,7 @@ export default function ViewCount() {
         }
         const data = await response.text();
         // Extract the actual count from the response
-        const countMatch = data.match(/RowKey: (\d+)/);
+        const countMatch = data.match(/count: (\d+)/);
         const count = countMatch ? countMatch[1] : "N/A";
         setViewCount(count);
       } catch (err) {

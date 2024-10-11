@@ -10,7 +10,12 @@ import { GithubIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
 import ViewCount from "@/components/ViewCount";
 
+import trackVisit from "../utils/trackVisit";
+
 export default function Home() {
+  useEffect(() => {
+    trackVisit();
+  }, []);
   return (
     <section className="w-full flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <div className="w-full inline-block text-center justify-center">
