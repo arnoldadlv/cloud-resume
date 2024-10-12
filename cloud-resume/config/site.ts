@@ -34,10 +34,7 @@ export const siteConfig = {
       label: "Resume (PDF)",
       href: "/resume/resume.pdf",
     },
-    {
-      label: "Projects",
-      href: "/projects",
-    },
+
     {
       label: "Movies API",
       href: "/movies-api",

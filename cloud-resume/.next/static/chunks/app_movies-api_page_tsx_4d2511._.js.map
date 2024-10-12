@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/app/movies-api/page.tsx"],"sourcesContent":["import MovieCard from \"@/components/MovieCard\";\n\nexport default function App() {\n  return (\n    <div>\n      <MovieCard></MovieCard>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;;;;AAEe,SAAS;IACtB,qBACE,6LAAC;kBACC,cAAA,6LAAC,2HAAA,CAAA,UAAS;;;;;;;;;;AAGhB;KANwB"}},
+    {"offset": {"line": 29, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

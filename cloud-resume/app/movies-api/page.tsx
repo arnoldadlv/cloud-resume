@@ -1,59 +1,75 @@
-"use client";
+// app/movies-api/page.tsx
 import MovieCard from "@/components/MovieCard";
-import React, { useEffect, useState } from "react";
+import { title, subtitle } from "@/components/primitives";
 
 // Define the structure of a Movie
 interface Movie {
-  imgURL: string; // This will correspond to posterURL
-  imgAlt: string; // You can set a default value or modify based on your needs
-  buttonText: string; // Button text to show
+  imgURL: string;
+  imgAlt: string;
+  buttonText: string;
+  movieTitle: string;
 }
 
-const MoviesAPI = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+export default async function MoviesAPI() {
+  try {
+    // IDs correlate to IDs in Azure Table, example: Movie 1, movie 2, etc.
+    const movieIDs = [1, 2, 3, 4, 5, 6];
+    console.log("Movie IDs: ", movieIDs);
 
-  // Fetch data from your API
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const response = await fetch("YOUR_API_ENDPOINT_HERE");
-        if (!response.ok) {
-          throw new Error("Failed to fetch movies");
-        }
-        const data = await response.json();
+    const fetchPromises = movieIDs.map((id) =>
+      fetch(`http://localhost:7071/api/GetMovie?id=${id}`)
+        .then((res) => {
+          if (res.ok) {
+            console.log("Success");
+            return res.json();
+          } else {
+            console.log("Fetch not successful");
+          }
+        })
+        .then((data) => {
+          console.log(data);
+          return data;
+        })
+    );
 
-        // Map the API response to the Movie interface
-        const mappedMovies: Movie[] = data.map((movie: any) => ({
-          imgURL: movie.posterURL, // Map the API's posterURL field to imgURL
-          imgAlt: movie.Title, // You can use the Title as imgAlt or set a default
-          cardHeader: movie.Title,
-          cardDescription: `Genre: ${movie.Genre} | Release Year: ${movie.ReleaseYear}`, // Construct a description
-          cardFooter: `Release Year: ${movie.ReleaseYear}`, // Use ReleaseYear for the footer
-          buttonText: "Notify me", // Static text or can be dynamic based on your requirements
-        }));
+    const allMovieData = await Promise.all(fetchPromises);
+    console.log(allMovieData);
 
-        setMovies(mappedMovies);
-      } catch (error) {
-        console.error("Error fetching movies:", error);
-      }
-    };
+    // Maps the API response to the Movie interface
 
-    fetchMovies();
-  }, []);
+    const movieData = allMovieData.map((movie) => ({
+      imgURL: movie.coverURL,
+      imgAlt: movie.Title,
+      buttonText: "Notify me",
+      movieTitle: movie.Title,
+    }));
 
-  return (
-    <div className="grid grid-cols-2 gap-8">
-      {movies.map((movie, index) => (
-        <div key={index}>
-          <MovieCard
-            imgAlt={movie.imgAlt}
-            imgURL={movie.imgURL}
-            buttonText={movie.buttonText}
-          />
+    return (
+      <div className="flex flex-col justify-center items-center max-wscreen-lg mx-auto">
+        <span className={`${title()} mb-4`}>Favorite Movies</span>
+        <span className={`${subtitle()} mb-4`}>
+          Here are a list of my favorite movies. This data was fetched using the
+          API I created with Azure Functions.
+        </span>
+
+        <div className="grid gap-8 md:grid-cols-3 items-center text-center">
+          {movieData.map((movie, index) => (
+            <div key={index}>
+              <div>
+                <MovieCard
+                  imgAlt={movie.imgAlt}
+                  imgURL={movie.imgURL}
+                  buttonText={movie.buttonText}
+                  movieTitle={movie.movieTitle}
+                />
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  );
-};
-
-export default MoviesAPI;
+      </div>
+    );
+  } catch (error) {
+    console.error("Error fetching movies:", error);
+    return <div>Error fetching movies.</div>;
+  }
+}
