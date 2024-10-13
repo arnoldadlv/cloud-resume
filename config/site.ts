@@ -10,7 +10,7 @@ export const siteConfig = {
     },
     {
       label: "Blog",
-      href: "https://arnolddelavega.com",
+      href: "https://blog.arnolddelavega.com",
     },
     {
       label: "Resume (PDF)",
@@ -28,7 +28,7 @@ export const siteConfig = {
   navMenuItems: [
     {
       label: "Blog",
-      href: "https://arnolddelavega.com",
+      href: "https://blog.arnolddelavega.com",
     },
     {
       label: "Resume (PDF)",
