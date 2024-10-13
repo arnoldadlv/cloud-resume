@@ -1,5 +1,5 @@
 node_modules/
-.next/
+.next/static
 public/resume/Resume.pdf
 __azurite_db_blob__.json
 __azurite_db_blob_extent__.json
