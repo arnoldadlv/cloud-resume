@@ -14,7 +14,7 @@ export const siteConfig = {
     },
     {
       label: "Resume (PDF)",
-      href: "/resume.pdf",
+      href: "/Resume.pdf",
     },
     {
       label: "Movies API",
@@ -32,7 +32,7 @@ export const siteConfig = {
     },
     {
       label: "Resume (PDF)",
-      href: "/resume.pdf",
+      href: "/Resume.pdf",
     },
 
     {
