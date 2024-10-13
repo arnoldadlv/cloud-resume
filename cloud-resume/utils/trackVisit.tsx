@@ -1,6 +1,6 @@
 "use client";
 
-const url = "http://192.168.0.192:7071/api/updateTable";
+const url = "https://favmoviesapi.azurewebsites.net/api/updateTable";
 async function updateTable(url: string) {
   try {
     const response = await fetch(url, {

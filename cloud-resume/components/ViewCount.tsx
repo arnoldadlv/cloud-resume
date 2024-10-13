@@ -11,7 +11,7 @@ export default function ViewCount() {
     async function fetchViewCount() {
       try {
         const response = await fetch(
-          "http://192.168.0.192:7071/api/queryTable"
+          "https://favmoviesapi.azurewebsites.net/api/querytable"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch view count.");

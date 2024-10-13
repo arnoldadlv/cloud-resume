@@ -17,7 +17,7 @@ export default async function MoviesAPI() {
     console.log("Movie IDs: ", movieIDs);
 
     const fetchPromises = movieIDs.map((id) =>
-      fetch(`http://localhost:7071/api/GetMovie?id=${id}`)
+      fetch(`https://favmoviesapi.azurewebsites.net/api/getmovie?id=${id}`)
         .then((res) => {
           if (res.ok) {
             console.log("Success");
