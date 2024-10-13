@@ -63,7 +63,7 @@ export default function RootLayout({
               <Link
                 isExternal
                 className="flex items-center gap-1 text-current"
-                href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
+                href="https://www.linkedin.com/in/arnold-de-la-vega-1ba6a9262/"
                 title="nextui.org homepage"
               >
                 <span className="text-default-600">Made by </span>
