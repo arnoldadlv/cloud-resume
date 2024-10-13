@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: '20.x'
 
+      - name: Change directory to cloud-resume
+	run: cd cloud-resume
+
       - name: npm install, build, and test
         run: |
           npm install
