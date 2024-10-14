@@ -1,8 +1,8 @@
-// app/movies-api/page.tsx
+import MoviesAPIWindow from "@/components/MovieAPIWindow";
 import MovieCard from "@/components/MovieCard";
 import { title, subtitle } from "@/components/primitives";
 
-// Define the structure of a Movie
+// Defines the structure of a Movie (based off our API response)
 interface Movie {
   imgURL: string;
   imgAlt: string;
@@ -47,29 +47,42 @@ export default async function MoviesAPI() {
     console.log(movieData);
 
     return (
-      <div className="flex flex-col justify-center items-center max-wscreen-lg mx-auto">
-        <span className={`${title()} mb-4`}>Favorite Movies</span>
-        <span className={`${subtitle()} mb-4`}>
-          Here are a list of my favorite movies. This data was fetched using the
-          API I created with Azure Functions.
-        </span>
-
-        <div className="grid gap-8 md:grid-cols-3 items-center text-center">
-          {movieData.map((movie, index) => (
-            <div key={index}>
-              <div>
-                <MovieCard
-                  imgAlt={movie.imgAlt}
-                  imgURL={movie.imgURL}
-                  buttonText={movie.buttonText}
-                  movieTitle={movie.movieTitle}
-                  objectPosition={movie.objectPosition}
-                />
+      <section className="w-full flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+        <div className="w-full flex flex-col justify-center items-center max-w-screen-lg x-aumto">
+          <span className={`${title()} mb-4`}>Favorite Movies</span>
+          <span className={`${subtitle()} mb-4 text-center`}>
+            Here are a list of my favorite movies. This data was fetched using
+            the API I created with Azure Functions. Below is a live response
+            from the API hosted in Azure.
+          </span>
+          <div className="w-full flex justify-center items-center max-w-lg mx-auto text-start light:bg-base-300">
+            <div className="mockup-browser light:bg-base-300 border overflow-auto max-w-fulls">
+              <div className="mockup-browser-toolbar">
+                <div className="input">https://arnolddelavega.com</div>
+              </div>
+              <div className="flex justify-center text-xs px-4 py-8 light:bg-color">
+                <MoviesAPIWindow />
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3 items-center text-center mt-8">
+            {movieData.map((movie, index) => (
+              <div key={index}>
+                <div>
+                  <MovieCard
+                    imgAlt={movie.imgAlt}
+                    imgURL={movie.imgURL}
+                    buttonText={movie.buttonText}
+                    movieTitle={movie.movieTitle}
+                    objectPosition={movie.objectPosition}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     );
   } catch (error) {
     console.error("Error fetching movies:", error);
