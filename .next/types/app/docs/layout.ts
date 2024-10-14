@@ -1,4 +1,4 @@
-// File: /Users/arnoldd/Desktop/cloud-resume-again/app/docs/layout.tsx
+// File: /Users/arnoldd/Desktop/GithubProjects/cloud-resume/app/docs/layout.tsx
 import * as entry from '../../../../app/docs/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

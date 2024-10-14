@@ -1,4 +1,4 @@
-// File: /Users/arnoldd/Desktop/cloud-resume-again/app/docs/page.tsx
+// File: /Users/arnoldd/Desktop/GithubProjects/cloud-resume/app/docs/page.tsx
 import * as entry from '../../../../app/docs/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
