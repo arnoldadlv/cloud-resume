@@ -37,12 +37,14 @@ export default async function MoviesAPI() {
 
     // Maps the API response to the Movie interface
 
-    const movieData = allMovieData.map((movie) => ({
+    const movieData = allMovieData.map((movie, index) => ({
       imgURL: movie.coverURL,
       imgAlt: movie.Title,
       buttonText: "Notify me",
       movieTitle: movie.Title,
+      objectPosition: determineObjectPosition(movieIDs[index]),
     }));
+    console.log(movieData);
 
     return (
       <div className="flex flex-col justify-center items-center max-wscreen-lg mx-auto">
@@ -61,6 +63,7 @@ export default async function MoviesAPI() {
                   imgURL={movie.imgURL}
                   buttonText={movie.buttonText}
                   movieTitle={movie.movieTitle}
+                  objectPosition={movie.objectPosition}
                 />
               </div>
             </div>
@@ -71,5 +74,24 @@ export default async function MoviesAPI() {
   } catch (error) {
     console.error("Error fetching movies:", error);
     return <div>Error fetching movies.</div>;
+  }
+
+  function determineObjectPosition(movieID: number): string {
+    switch (movieID) {
+      case 1:
+        return "center";
+      case 2:
+        return "top";
+      case 3:
+        return "top";
+      case 4:
+        return "top";
+      case 5:
+        return "top";
+      case 6:
+        return "top";
+      default:
+        return "center";
+    }
   }
 }
