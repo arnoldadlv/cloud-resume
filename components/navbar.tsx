@@ -18,7 +18,9 @@ import clsx from "clsx";
 import Image from "next/image";
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
+{
+  /* import { ThemeSwitch } from "@/components/theme-switch"; */
+}
 import {
   TwitterIcon,
   GithubIcon,
@@ -81,14 +83,18 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
+          {/* 
           <ThemeSwitch />
+          */}
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden md:flex"></NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <ThemeSwitch />
+        {/* 
+          <ThemeSwitch />
+          */}
         <NavbarMenuToggle />
       </NavbarContent>
 

@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import ViewCount from "@/components/ViewCount";
 
 import trackVisit from "../utils/trackVisit";
+import MoviesAPIWindow from "@/components/MovieAPIWindow";
 
 export default function Home() {
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function Home() {
       <div className="w-full inline-block text-center justify-center">
         <span className={title()}>Hello, I'm Arnold,&nbsp;</span>
         <br />
+
         <span className={title()}>And this page has been viewed </span>
         <span className={title({ color: "violet" })}>
           <ViewCount />
