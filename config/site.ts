@@ -22,7 +22,7 @@ export const siteConfig = {
     },
     {
       label: "Contact Me",
-      href: "/contact",
+      href: "tel:+12066818920",
     },
   ],
   navMenuItems: [
