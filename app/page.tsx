@@ -65,7 +65,7 @@ export default function Home() {
                 <li>AZ-104</li>
                 <li>AZ-305</li>
                 <li>SC-300</li>
-                <li>AZ-500</li>
+                <li>CCNA 200-301</li>
               </ul>
             </span>
           </div>
