@@ -46,12 +46,12 @@ export default function Home() {
           <h2 className={`${title({ color: "violet" })}`}>Skills</h2>
           <span className={subtitle()}>
             <ul className="md: list-disc list-inside text-left inline-block mx-auto">
-              <li>GCCH Administration</li>
               <li>Azure</li>
-              <li>Intune</li>
-              <li>NIST 800-171</li>
-              <li>IaC</li>
-              <li>Bash</li>
+              <li>Microsoft 365 (including GCCH)</li>
+              <li>Networking (Cisco, Juniper, Palo Alto)</li>
+              <li>NIST 800-171 Framework</li>
+              <li>IaC (Azure Bicep)</li>
+              <li>Powershell & Bash</li>
             </ul>
           </span>
         </div>
