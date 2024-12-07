@@ -47,9 +47,9 @@ export default function Home() {
           <span className={subtitle()}>
             <ul className="md: list-disc list-inside text-left inline-block mx-auto">
               <li>Azure</li>
-              <li>Microsoft 365 (including GCCH)</li>
-              <li>Networking (Cisco, Juniper, Palo Alto)</li>
-              <li>NIST 800-171 Framework</li>
+              <li>Microsoft 365</li>
+              <li>Networking</li>
+              <li>NIST 800-171</li>
               <li>IaC (Azure Bicep)</li>
               <li>Powershell & Bash</li>
             </ul>
