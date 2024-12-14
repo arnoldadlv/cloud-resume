@@ -66,6 +66,7 @@ export default function Home() {
                 <li>AZ-305</li>
                 <li>SC-300</li>
                 <li>CCNA 200-301</li>
+                <li>PCNSA (Palo Alto)</li>
               </ul>
             </span>
           </div>
