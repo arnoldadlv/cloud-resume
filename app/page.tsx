@@ -47,11 +47,13 @@ export default function Home() {
           <span className={subtitle()}>
             <ul className="md: list-disc list-inside text-left inline-block mx-auto">
               <li>Azure</li>
-              <li>Microsoft 365</li>
+              <li>Microsoft 365 (GCCH)</li>
               <li>Networking</li>
               <li>NIST 800-171</li>
               <li>IaC (Azure Bicep)</li>
               <li>Powershell & Bash</li>
+              <li>Endpoint Security</li>
+              <li>Cloud Migration</li>
             </ul>
           </span>
         </div>
@@ -60,12 +62,13 @@ export default function Home() {
             <h2 className={`${title({ color: "violet" })}`}>Certs</h2>
             <span className={subtitle()}>
               <ul className="md: list-disc list-inside text-left inline-block mx-auto">
-                <li>CompTIA Network+</li>
-                <li>CompTIA Security+</li>
+                <li>CCNA 200-301</li>
                 <li>AZ-104</li>
                 <li>AZ-305</li>
+                <li>AZ-500</li>
                 <li>SC-300</li>
-                <li>CCNA 200-301</li>
+                <li>CompTIA Network+</li>
+                <li>CompTIA Security+</li>
                 <li>PCNSA (Palo Alto)</li>
               </ul>
             </span>
