@@ -13,6 +13,10 @@ export const siteConfig = {
       href: "https://blog.arnolddelavega.com",
     },
     {
+      label: "Case Studies",
+      href: "/case-studies",
+    },
+    {
       label: "Resume (PDF)",
       href: "/Resume.pdf",
     },
@@ -29,6 +33,10 @@ export const siteConfig = {
     {
       label: "Blog",
       href: "https://blog.arnolddelavega.com",
+    },
+    {
+      label: "Case Studies",
+      href: "/case-studies",
     },
     {
       label: "Resume (PDF)",
