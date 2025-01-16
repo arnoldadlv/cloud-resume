@@ -1,3 +1,4 @@
+import AnimatedElement from "@/components/AnimatedElement";
 import MoviesAPIWindow from "@/components/MovieAPIWindow";
 import MovieCard from "@/components/MovieCard";
 import { title, subtitle } from "@/components/primitives";
@@ -36,7 +37,6 @@ export default async function MoviesAPI() {
     console.log(allMovieData);
 
     // Maps the API response to the Movie interface
-
     const movieData = allMovieData.map((movie, index) => ({
       imgURL: movie.coverURL,
       imgAlt: movie.Title,
@@ -49,35 +49,45 @@ export default async function MoviesAPI() {
     return (
       <section className="w-full flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="w-full flex flex-col justify-center items-center max-w-screen-lg x-aumto">
-          <span className={`${title()} mb-4`}>Favorite Movies</span>
-          <span className={`${subtitle()} mb-4 text-center`}>
-            Here are a list of my favorite movies. This data was fetched using
-            the API I created with Azure Functions. Below is a live response
-            from the API hosted in Azure.
-          </span>
+          <AnimatedElement>
+            <span className={`${title()} mb-4`}>Favorite Movies</span>
+          </AnimatedElement>
+          <AnimatedElement>
+            <span className={`${subtitle()} mb-4 text-center`}>
+              Here are a list of my favorite movies. This data was fetched using
+              the API I created with Azure Functions. Below is a live response
+              from the API hosted in Azure.
+            </span>
+          </AnimatedElement>
           <div className="w-full flex justify-center items-center max-w-lg mx-auto text-start light:bg-base-300">
             <div className="mockup-browser light:bg-base-300 border overflow-auto max-w-fulls">
               <div className="mockup-browser-toolbar">
-                <div className="input">https://arnolddelavega.com</div>
+                <div className="input text-black">
+                  https://arnolddelavega.com
+                </div>
               </div>
-              <div className="flex justify-center text-xs px-4 py-8 light:bg-color">
-                <MoviesAPIWindow />
-              </div>
+              <AnimatedElement>
+                <div className="flex justify-center text-xs px-4 py-8 light:bg-color">
+                  <MoviesAPIWindow />
+                </div>
+              </AnimatedElement>
             </div>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3 items-center text-center mt-8">
             {movieData.map((movie, index) => (
               <div key={index}>
-                <div>
-                  <MovieCard
-                    imgAlt={movie.imgAlt}
-                    imgURL={movie.imgURL}
-                    buttonText={movie.buttonText}
-                    movieTitle={movie.movieTitle}
-                    objectPosition={movie.objectPosition}
-                  />
-                </div>
+                <AnimatedElement>
+                  <div>
+                    <MovieCard
+                      imgAlt={movie.imgAlt}
+                      imgURL={movie.imgURL}
+                      buttonText={movie.buttonText}
+                      movieTitle={movie.movieTitle}
+                      objectPosition={movie.objectPosition}
+                    />
+                  </div>
+                </AnimatedElement>
               </div>
             ))}
           </div>
