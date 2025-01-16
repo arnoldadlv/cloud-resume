@@ -8,6 +8,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import AnimatedElement from "@/components/AnimatedElement";
 
 export const metadata: Metadata = {
   title: {
@@ -44,32 +45,34 @@ export default function RootLayout({
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
               {children}
             </main>
-            <footer className="w-full flex flex-col items-center justify-center py-3">
-              <div className="flex items-center gap-2">
-                <span>📧</span>
+            <AnimatedElement>
+              <footer className="w-full flex flex-col items-center justify-center py-3">
+                <div className="flex items-center gap-2">
+                  <span>📧</span>
+                  <Link
+                    href="mailto:arnolddlvs@gmail.com"
+                    className="text-blue-500"
+                  >
+                    arnolddlvs@gmail.com
+                  </Link>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span>📞</span>
+                  <Link href="tel:+12066818920" className="text-blue-500">
+                    +1 (206)-681-8920
+                  </Link>
+                </div>
                 <Link
-                  href="mailto:arnolddlvs@gmail.com"
-                  className="text-blue-500"
+                  isExternal
+                  className="flex items-center gap-1 text-current"
+                  href="https://www.linkedin.com/in/arnold-de-la-vega-1ba6a9262/"
+                  title="nextui.org homepage"
                 >
-                  arnolddlvs@gmail.com
+                  <span className="text-default-600">Made by </span>
+                  <p className="text-primary">Arnold</p>
                 </Link>
-              </div>
-              <div className="flex items-center gap-2">
-                <span>📞</span>
-                <Link href="tel:+12066818920" className="text-blue-500">
-                  +1 (206)-681-8920
-                </Link>
-              </div>
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://www.linkedin.com/in/arnold-de-la-vega-1ba6a9262/"
-                title="nextui.org homepage"
-              >
-                <span className="text-default-600">Made by </span>
-                <p className="text-primary">Arnold</p>
-              </Link>
-            </footer>
+              </footer>
+            </AnimatedElement>
           </div>
         </Providers>
       </body>
