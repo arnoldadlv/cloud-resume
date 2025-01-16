@@ -59,11 +59,12 @@ export default async function MoviesAPI() {
               from the API hosted in Azure.
             </span>
           </AnimatedElement>
-          <AnimatedElement>
-            <div className="w-full flex justify-center items-center max-w-lg mx-auto text-start light:bg-base-300">
-              <div className="mockup-browser light:bg-base-300 border overflow-auto max-w-fulls">
+
+          <div className="w-full flex justify-center items-center max-w-lg mx-auto text-start light:bg-base-300">
+            <div className="mockup-browser light:bg-base-300 border overflow-auto max-w-fulls">
+              <AnimatedElement>
                 <div className="mockup-browser-toolbar">
-                  <div className="input text-black">
+                  <div className="input text-white">
                     https://arnolddelavega.com
                   </div>
                 </div>
@@ -71,9 +72,9 @@ export default async function MoviesAPI() {
                 <div className="flex justify-center text-xs px-4 py-8 light:bg-color">
                   <MoviesAPIWindow />
                 </div>
-              </div>
+              </AnimatedElement>
             </div>
-          </AnimatedElement>
+          </div>
 
           <div className="grid gap-8 md:grid-cols-3 items-center text-center mt-8">
             {movieData.map((movie, index) => (
