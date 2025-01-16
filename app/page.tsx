@@ -1,23 +1,19 @@
-"use client";
 import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
-
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
-import { useEffect, useState } from "react";
 import ViewCount from "@/components/ViewCount";
+import VisitTracker from "@/components/VisitTracker";
 
 import trackVisit from "../utils/trackVisit";
 import MoviesAPIWindow from "@/components/MovieAPIWindow";
 import AnimatedElement from "@/components/AnimatedElement";
 
 export default function Home() {
-  useEffect(() => {
-    trackVisit();
-  }, []);
   return (
     <section className="w-full flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+      <VisitTracker />
       <div className="w-full inline-block text-center justify-center">
         <AnimatedElement>
           <span className={title()}>Hello, I'm Arnold,&nbsp;</span>
