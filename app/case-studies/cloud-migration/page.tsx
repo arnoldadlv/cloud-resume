@@ -1,5 +1,5 @@
 import { title, subtitle } from "@/components/primitives";
-import { Divider } from "@nextui-org/divider";
+import { Divider } from "@heroui/divider";
 
 export default function CaseStudy() {
   return (

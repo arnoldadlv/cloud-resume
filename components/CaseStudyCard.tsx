@@ -1,7 +1,7 @@
 "use client";
 // CaseStudyCard.tsx
 import React from "react";
-import { Card, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardFooter, Image } from "@heroui/react";
 import Link from "next/link";
 
 interface CaseStudyCardProps {

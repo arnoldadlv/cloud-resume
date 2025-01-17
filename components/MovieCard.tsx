@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Card, CardFooter, Image, Button } from "@nextui-org/react";
+import { Card, CardFooter, Image, Button } from "@heroui/react";
 
 interface MovieCardProps {
   imgAlt: string;
