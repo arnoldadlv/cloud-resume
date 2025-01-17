@@ -61,12 +61,10 @@ export default async function MoviesAPI() {
           </AnimatedElement>
 
           <div className="w-full flex justify-center items-center max-w-lg mx-auto text-start light:bg-base-300">
-            <div className="mockup-browser light:bg-base-300 border overflow-auto max-w-fulls">
+            <div className="mockup-browser">
               <AnimatedElement>
-                <div className="mockup-browser-toolbar">
-                  <div className="input text-white">
-                    https://arnolddelavega.com
-                  </div>
+                <div className="mockup-browser-toolbar text-white">
+                  <div className="input">https://arnolddelavega.com</div>
                 </div>
 
                 <div className="flex justify-center text-xs px-4 py-8 light:bg-color">
