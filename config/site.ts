@@ -12,10 +12,7 @@ export const siteConfig = {
       label: "Blog",
       href: "https://blog.arnolddelavega.com",
     },
-    {
-      label: "Resume (PDF)",
-      href: "/Resume.pdf",
-    },
+
     {
       label: "Movies API",
       href: "/movies-api",
@@ -29,10 +26,6 @@ export const siteConfig = {
     {
       label: "Blog",
       href: "https://blog.arnolddelavega.com",
-    },
-    {
-      label: "Resume (PDF)",
-      href: "/Resume.pdf",
     },
 
     {
