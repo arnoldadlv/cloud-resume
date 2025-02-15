@@ -5,7 +5,14 @@ const WORDPRESS_API_URL = "https://blog.arnolddelavega.com/wp-json/wp/v2";
 
 export async function getAllPosts(): Promise<WordPressPost[]> {
   try {
-    const response = await fetch(`${WORDPRESS_API_URL}/posts?_embed`);
+    const response = await fetch(
+      `${WORDPRESS_API_URL}/posts?_embed&per_page=100`,
+      {
+        next: {
+          revalidate: 60, //revalidates list of posts every 60 seconds
+        },
+      }
+    );
     if (!response.ok) {
       throw new Error("Failed to fetch posts");
     }
@@ -22,7 +29,12 @@ export async function getPostBySlug(
 ): Promise<WordPressPost | null> {
   try {
     const response = await fetch(
-      `${WORDPRESS_API_URL}/posts?slug=${slug}&_embed`
+      `${WORDPRESS_API_URL}/posts?slug=${slug}&_embed`,
+      {
+        next: {
+          revalidate: 3600, //refreshes individual posts every hour
+        },
+      }
     );
     if (!response.ok) {
       throw new Error("Failed to fetch post");
@@ -35,4 +47,3 @@ export async function getPostBySlug(
   }
 }
 export type { WordPressPost };
-

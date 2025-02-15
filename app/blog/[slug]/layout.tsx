@@ -92,10 +92,14 @@ export default async function BlogPost({ params }: BlogPostParams) {
             prose-code:text-accent-foreground
             prose-code:rounded
             prose-code:px-1
+			prose-ul:text-muted-foreground
+    		prose-ol:text-muted-foreground
             dark:prose-headings:text-foreground
             dark:prose-p:text-muted-foreground
 			dark:prose-li:text-muted-foreground
+			dark:prose-ul:text-muted-foreground
 			dark:prose-ol:text-muted-foreground
+			dark:prose-strong:text-muted-foreground
             dark:prose-a:text-primary-400
             dark:hover:prose-a:text-primary-300
             dark:prose-pre:bg-muted
