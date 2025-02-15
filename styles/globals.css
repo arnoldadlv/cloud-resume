@@ -64,3 +64,12 @@
     @apply bg-background text-foreground;
   }
 }
+.prose ul > li::marker,
+.prose ol > li::marker {
+  color: inherit; /* Inherits from prose-li:text-color */
+}
+
+.prose-dark ul > li::marker,
+.prose-dark ol > li::marker {
+  @apply text-muted-foreground;
+}
