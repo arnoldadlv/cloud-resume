@@ -10,43 +10,45 @@ interface BlogListProps {
 
 export default function BlogList({ posts }: BlogListProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="space-y-12">
       {posts.map((post) => (
         <article
           key={post.id}
-          className="border rounded-lg overflow-hidden shadow-lg"
+          className="flex flex-col md:flex-row gap-6 border-b pb-12"
         >
           {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
-            <div className="relative h-48">
-              <Image
-                src={post._embedded["wp:featuredmedia"][0].source_url}
-                alt={post.title.rendered}
-                fill
-                className="object-cover"
-              />
+            <div className="md:w-1/3">
+              <div className="relative h-48 md:h-full">
+                <Image
+                  src={post._embedded["wp:featuredmedia"][0].source_url}
+                  alt={post.title.rendered}
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           )}
-          <div className="p-4">
-            <h2 className="text-xl font-semibold mb-2">
+          <div className="md:w-2/3">
+            <h2 className="text-2xl font-semibold mb-2">
               <Link href={`/blog/${post.slug}`}>
                 <span
                   dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                 />
               </Link>
-              <p className="text-sm text-gray-500">Slug: {post.slug}</p>
             </h2>
+            <p className="text-sm text-gray-500 mb-4">
+              Published on: {new Date(post.date).toLocaleDateString()}
+            </p>
             <div
-              className="text-gray-600"
+              className="text-foreground mb-4"
               dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
             />
-            <div className="mt-4">
-              <Link
-                href={`/blog/${post.slug}`}
-                className="text-blue-600 hover:text-blue-800"
-              >
-                Read more
-              </Link>
-            </div>
+            <Link
+              href={`/blog/${post.slug}`}
+              className="text-blue-600 hover:text-blue-800"
+            >
+              Read more
+            </Link>
           </div>
         </article>
       ))}

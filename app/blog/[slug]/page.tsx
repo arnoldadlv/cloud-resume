@@ -59,10 +59,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
             />
           </div>
         )}
-        <div
-          className="prose max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-        />
+        <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
       </article>
     );
   } catch (error) {
