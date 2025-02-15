@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     template: "%s | Arnold Delavega Blog",
     default: "Blog | Arnold Delavega",
   },
-  description: "Personal blog about software development and technology",
+  description: "Personal blog about everything tech",
 };
 
 export default function BlogLayout({
@@ -15,12 +15,10 @@ export default function BlogLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <main className="min-h-screen">
+      <div className="container">
         {/* Common header or navigation could go here */}
-        <div className="bg-white rounded-xl shadow-sm p-8 md:p-12">
-          {children}
-        </div>
+        <div className="rounded-xl shadow-sm p-8 md:p-12">{children}</div>
         {/* Common footer could go here */}
       </div>
     </main>

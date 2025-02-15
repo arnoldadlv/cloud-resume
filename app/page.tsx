@@ -6,8 +6,6 @@ import { GithubIcon } from "@/components/icons";
 import ViewCount from "@/components/ViewCount";
 import VisitTracker from "@/components/VisitTracker";
 
-import trackVisit from "../utils/trackVisit";
-import MoviesAPIWindow from "@/components/MovieAPIWindow";
 import AnimatedElement from "@/components/AnimatedElement";
 
 export default function Home() {

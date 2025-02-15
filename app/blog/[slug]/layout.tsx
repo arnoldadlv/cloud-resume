@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { title } from "@/components/primitives";
 
 interface BlogPostParams {
   params: {
@@ -49,10 +50,10 @@ export default async function BlogPost({ params }: BlogPostParams) {
         {/* Header Section */}
         <header className="mb-12 text-center">
           <h1
-            className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 leading-tight"
+            className={title({ color: "violet" })}
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           />
-          <div className="text-gray-600">
+          <div className="py-4 text-muted-foreground">
             Published on{" "}
             {new Date(post.date).toLocaleDateString("en-US", {
               year: "numeric",
@@ -77,7 +78,28 @@ export default async function BlogPost({ params }: BlogPostParams) {
 
         {/* Content */}
         <div
-          className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-p:text-gray-700 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-xl prose-img:shadow-lg prose-pre:bg-gray-800 prose-pre:text-gray-100 prose-code:text-gray-800 prose-code:bg-gray-100 prose-code:rounded prose-code:px-1"
+          className="prose prose-lg max-w-none
+            prose-headings:text-foreground
+            prose-headings:font-bold
+            prose-p:text-muted-foreground
+            prose-a:text-primary
+            hover:prose-a:text-primary-600
+            prose-img:rounded-xl
+            prose-img:shadow-lg
+            prose-pre:bg-accent
+            prose-pre:text-accent-foreground
+            prose-code:bg-accent
+            prose-code:text-accent-foreground
+            prose-code:rounded
+            prose-code:px-1
+            dark:prose-headings:text-foreground
+            dark:prose-p:text-muted-foreground
+			dark:prose-li:text-muted-foreground
+			dark:prose-ol:text-muted-foreground
+            dark:prose-a:text-primary-400
+            dark:hover:prose-a:text-primary-300
+            dark:prose-pre:bg-muted
+            dark:prose-code:bg-muted"
           dangerouslySetInnerHTML={{ __html: post.content.rendered }}
         />
 
@@ -85,7 +107,11 @@ export default async function BlogPost({ params }: BlogPostParams) {
         <div className="mt-12 flex justify-center">
           <Link
             href="/blog"
-            className="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-700 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-200"
+            className="inline-flex items-center px-6 py-3 text-sm font-medium
+              bg-background text-foreground
+              rounded-lg border border-border
+              hover:bg-accent hover:text-accent-foreground
+              transition-colors duration-200"
           >
             ← Back to Blog
           </Link>
@@ -96,4 +122,3 @@ export default async function BlogPost({ params }: BlogPostParams) {
     notFound();
   }
 }
-``
