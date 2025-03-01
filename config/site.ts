@@ -12,10 +12,20 @@ export const siteConfig = {
       label: "Blog",
       href: "/blog",
     },
-
     {
-      label: "Movies API",
-      href: "/movies-api",
+      label: "Portfolio", // Changed from Movies API
+      href: "#",
+      children: [
+        // Added dropdown items
+        {
+          label: "Movies API",
+          href: "/movies-api",
+        },
+        {
+          label: "Azure Tenant Lookup",
+          href: "https://www.azuretenantlookup.com",
+        },
+      ],
     },
     {
       label: "Contact Me",
@@ -23,14 +33,28 @@ export const siteConfig = {
     },
   ],
   navMenuItems: [
+    // Mirror desktop structure
+    {
+      label: "Home",
+      href: "/",
+    },
     {
       label: "Blog",
       href: "/blog",
     },
-
     {
-      label: "Movies API",
-      href: "/movies-api",
+      label: "Portfolio",
+      href: "#",
+      children: [
+        {
+          label: "Movies API",
+          href: "/movies-api",
+        },
+        {
+          label: "Azure Tenant Lookup",
+          href: "https://www.azuretenantlookup.com",
+        },
+      ],
     },
     {
       label: "Contact Me",
