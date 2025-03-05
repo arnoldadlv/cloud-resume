@@ -19,7 +19,7 @@ export default function Home() {
           <br />
 
           <span className={title()}>And this page has been viewed </span>
-          <span className={title({ color: "violet" })}>
+          <span className={title({ color: "blue" })}>
             <ViewCount />
             &nbsp;{" "}
           </span>
@@ -42,7 +42,7 @@ export default function Home() {
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 items-start">
         <div className="flex flex-col items-center text-center mt-5">
           <AnimatedElement>
-            <h2 className={`${title({ color: "violet" })}`}>Skills</h2>
+            <h2 className={`${title({ color: "blue" })}`}>Skills</h2>
             <span className={subtitle()}>
               <ul className="md: list-disc list-inside text-left inline-block mx-auto">
                 <li>Azure</li>
@@ -60,7 +60,7 @@ export default function Home() {
         <div>
           <div className="flex flex-col items-center text-center mt-5">
             <AnimatedElement>
-              <h2 className={`${title({ color: "violet" })}`}>Certs</h2>
+              <h2 className={`${title({ color: "blue" })}`}>Certs</h2>
               <span className={subtitle()}>
                 <ul className="md: list-disc list-inside text-left inline-block mx-auto">
                   <li>CCNA 200-301</li>
