@@ -50,7 +50,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
         {/* Header Section */}
         <header className="mb-12 text-center">
           <h1
-            className={title({ color: "violet" })}
+            className={title()}
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           />
           <div className="py-4 text-muted-foreground">
