@@ -47,21 +47,6 @@ export default function RootLayout({
             </main>
             <AnimatedElement>
               <footer className="w-full flex flex-col items-center justify-center py-3">
-                <div className="flex items-center gap-2">
-                  <span>📧</span>
-                  <Link
-                    href="mailto:arnolddlvs@gmail.com"
-                    className="text-blue-500"
-                  >
-                    arnolddlvs@gmail.com
-                  </Link>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span>📞</span>
-                  <Link href="tel:+12066818920" className="text-blue-500">
-                    +1 (206)-681-8920
-                  </Link>
-                </div>
                 <Link
                   isExternal
                   className="flex items-center gap-1 text-current"

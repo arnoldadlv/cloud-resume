@@ -27,10 +27,6 @@ export const siteConfig = {
         },
       ],
     },
-    {
-      label: "Contact Me",
-      href: "tel:+12066818920",
-    },
   ],
   navMenuItems: [
     // Mirror desktop structure
@@ -55,10 +51,6 @@ export const siteConfig = {
           href: "https://www.azuretenantlookup.com",
         },
       ],
-    },
-    {
-      label: "Contact Me",
-      href: "tel:+12066818920",
     },
   ],
   links: {
