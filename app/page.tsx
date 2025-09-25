@@ -71,6 +71,7 @@ export default function Home() {
                   <li>CompTIA Network+</li>
                   <li>CompTIA Security+</li>
                   <li>PCNSA (Palo Alto)</li>
+                  <li>CCP (CMMC)</li>
                 </ul>
               </span>
             </AnimatedElement>
